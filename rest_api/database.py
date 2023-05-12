@@ -10,7 +10,7 @@ config = {
 }
 
 
-def connectDB():
+def db():
     try:
         cnx = mysql.connector.connect(**config)
     except mysql.connector.Error as err:
@@ -20,7 +20,5 @@ def connectDB():
             print("Database does not exist")
         else:
             print(err)
-    else:
-        cnx.close()
 
     return cnx
