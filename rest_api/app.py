@@ -4,6 +4,12 @@ from database import db
 app = Flask(__name__)
 
 
+# SET CACHE CONTROL TO ALL ROUTES
+@app.after_request
+def add_cache_control(response):
+    response.headers['Cache-Control'] = 'public, max-age=3600, must-revalidate'
+    return response
+
 @app.route("/")
 def fetchData():
     try:
@@ -17,7 +23,7 @@ def fetchData():
         return jsonify({"message": "Internal Error"})
 
 
-@app.route("/person/<int:id>")
+@app.route("/person/<int:id>", methods=["GET"])
 def fetch_by_id(id=None):
     try:
         query = ("SELECT * FROM mock_data WHERE id = %s")
@@ -26,8 +32,8 @@ def fetch_by_id(id=None):
             data = cursor.fetchall()
             print(cnx.is_closed())
             if (len(data) <= 0):
-                return jsonify({"message": "User not found", "closed": cnx.is_closed()}), 404
-            return jsonify({"data": data, "closed": cnx.is_closed()}), 200
+                return jsonify({"message": "User not found"}), 404
+            return jsonify({"data": data}), 200
     except Exception as e:
         return jsonify({"message": str(e)}), 400
 
