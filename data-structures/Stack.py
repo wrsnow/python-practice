@@ -1,6 +1,6 @@
 class Stack:
   data = []
-  def __init__(self):
+  def __init__(self)->None:
     self.data = []
 
   def push(self,new_data)->str:
@@ -21,10 +21,9 @@ class Stack:
       return "The stack is empty"
     return self.data[-1]
 
-  def clear(self):
+  def clear(self)->None:
     while len(self.data) > 0:
       self.data.pop()
-      self.clear()
 
   def search(self,element):
     try:
@@ -39,9 +38,10 @@ stack = Stack()
 
 for i in range(50):
   stack.push(i)
-  print(stack.pop())
 
 
 print(stack)
 stack.push(4)
 print(stack.search(4))
+stack.clear()
+print(f"Stack: {stack}")
