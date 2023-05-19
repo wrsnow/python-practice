@@ -16,14 +16,14 @@ def rename_file(filename:str,new_name:str):
 
 ##
 def renameMany(files:list, basename:str)->None:
-  print("[app] started...")
-  print("[app] renaming files...")
-  counter = 0
-  for file in files:
-    counter+= 1
-    file_ext = re.findall(r"\..*\w",file)[-1]
-    rename_file(file, f"{basename} {counter}{file_ext}")
-  print("[app] finished")
+	print("[app] started...")
+	print("[app] renaming files...")
+	counter = 0
+	for file in files:
+		counter+= 1
+		file_ext = file.split(".")[-1]
+		rename_file(file, f"{basename} {counter}.{file_ext}")
+	print("[app] finished")
 
 ## filter the content of the folder and store only files
 files = []
@@ -35,5 +35,5 @@ for file in dirfiles:
 
 ## prompt the user to choose a name for the renamed files
 desired_output = input("Output name: ")
-
+print(files)
 renameMany(files, desired_output)
