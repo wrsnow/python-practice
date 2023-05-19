@@ -59,7 +59,7 @@ def create_random_files():
 files = os.listdir(folder_path)
 output_base = "secret"
 
-def rename_file(path,filename,new_name):
+def rename_file(path:str,filename:str,new_name:str):
 	os.chdir(path)
 	try:
 		os.rename(filename, new_name)
@@ -67,7 +67,7 @@ def rename_file(path,filename,new_name):
 		print(f"Something went wrong with file: {filename}")
 
 
-def renameMany(files, basename):
+def renameMany(files:list, basename:str)->None:
   counter = 0
   for file in files:
     counter+= 1
