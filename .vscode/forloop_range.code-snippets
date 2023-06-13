@@ -1,0 +1,8 @@
+{
+  "for loop range": {
+    "scope": "python",
+    "prefix": "forrange",
+    "body": ["for i in range()"],
+    "description": "for loop range"
+  }
+}

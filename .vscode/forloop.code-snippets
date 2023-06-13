@@ -1,0 +1,8 @@
+{
+  "for loop": {
+    "scope": "python",
+    "prefix": "foritem",
+    "body": ["for item in $1"],
+    "description": "for loop"
+  }
+}
