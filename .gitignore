@@ -9,7 +9,7 @@ __pycache__/
 
 # Custom Files & Folders
 */cli_apps/test.py
-
+.secret
 # Distribution / packaging
 .Python
 build/
