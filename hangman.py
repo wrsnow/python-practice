@@ -26,21 +26,21 @@ def lineDividers(symbol, times):
 
 def play():
     print('''
-          HANGMAN
+		  HANGMAN
 
-          -------
-          |
-          |
-          |
-          |
-          |
-          |
-          |
-          |------------------
+		  -------
+		  |
+		  |
+		  |
+		  |
+		  |
+		  |
+		  |
+		  |------------------
 
-          Pick a letter to start playing.
+		  Pick a letter to start playing.
 
-          ''')
+		  ''')
     global correctLetters
     while (game_status != "end" and correctLetters != len(secret_word)):
         print(f"Letter used: {player_guesses}\n")

@@ -9,7 +9,8 @@ __pycache__/
 
 # Custom Files & Folders
 */cli_apps/test.py
-
+*/pyautogui-img-auto
+*/web-scrapping/*
 # Distribution / packaging
 .Python
 build/
