@@ -5,10 +5,11 @@ __pycache__/
 
 # C extensions
 *.so
-
+#
 
 # Custom Files & Folders
 */cli_apps/test.py
+.secret
 */pyautogui-img-auto
 */web-scrapping/*
 # Distribution / packaging
